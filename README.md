@@ -1,5 +1,7 @@
 # FIAP-Cyber
 
+#### Resumo colega: https://www.notion.so/flaviovicentin/Cybersecurity-b35d9c73f60249cdb12c28dc66c0d06a
+
 ## Resumo de Comandos
 
 ### Instalação e Configuração
