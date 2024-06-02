@@ -58,6 +58,17 @@ ls
 8. Vamos monitorar o servidor e ver como ele vai agir.
 > tail –f access.log
 
+Montando a requisição REQUEST
+> nc -v 127.0.0.1 80 
+
+> GET / HTTP/1.0 (depois dar enter)
+
+Validação com ECHO e CURL:
+> $ echo -e "HEAD / HTTP/1.0\r\n\r\n" | nc__v_192.168.1.10 80
+
+> $ curl -v 192.168.1.10/ijpj
+
+
 ### Instalação e Configuração
 
 - Instalar o Netcat:
