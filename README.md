@@ -4,10 +4,61 @@
 
 ## Resumo de Comandos
 
+### Updates/Installs
+apt install update
+apt install upgrade
+apt install apache2 apache2-utils -y
+apt install net-tools
+
+- Iniciar o servidor:
+service apache2 start
+
+### Notes CP01
+
+- Entrar no diretório padrão do servidor html:
+cd /var/www/html
+
+- Vamos renomear o index.html para copial.html:
+mv index.html copia.html
+
+- Gerar a primeira falha de segurança no webservice:
+- Vamos criar arquivos na pasta padrão do webservice e ver eles exibidos do lado do cliente:
+touch bkp.txt cadastro.php
+
+- criar o index.html, com o editor de texto do Linux – nano, e ver o que acontece com o webservice:
+nano index.html
+
+#### RESOLVENDO PROBLEMAS DE SEGURANÇA:
+
+1. OCULTAR AS PASTAS PARA OS CLIENTES:
+nano /etc/apache2/apache2.conf
+
+- Remover o INDEXES para não exibir mais as pastas disponíveis para os clientes.
+
+- Restart o webservice apache:
+service apache2 restart
+
+- Alterar a configuração do banner no apache:
+nano /etc/apache2/conf-enabled/security.conf
+
+- Por padrão o apache vem com o token como o Sistema Operacional (SO) deseja e a assinatura online. 
+- Mas por medida de segurança, devemos alterar para o modo de Produção.:
+Trocar de "ServerTokens OS" para "ServerTokens Prod" e desligar a assinatura "ServerSignature Off"
+
+- Subir o servidor python na porta 8080
+python3 –m http.server 8080
+
+VER LOGs do SERVIDOR APACHE
+1. No apache, ele existe o caminho padrão das pastas
+cd /var/log/apach2
+ls
+8. Vamos monitorar o servidor e ver como ele vai agir.
+tail –f access.log
+
 ### Instalação e Configuração
 
 - Instalar o Netcat:
-- apt install netcat
+apt install netcat
 
 - Iniciar um servidor HTTP em Python na porta 8080:
 python3 -m http.server 8080
