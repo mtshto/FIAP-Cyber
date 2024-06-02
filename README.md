@@ -6,8 +6,11 @@
 
 ### Updates/Installs
 > apt install update
+
 > apt install upgrade
+
 > apt install apache2 apache2-utils -y
+
 > apt install net-tools
 
 - Iniciar o servidor:
