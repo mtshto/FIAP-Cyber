@@ -7,7 +7,7 @@
 ### Instalação e Configuração
 
 - Instalar o Netcat:
-apt install netcat
+- apt install netcat
 
 - Iniciar um servidor HTTP em Python na porta 8080:
 python3 -m http.server 8080
