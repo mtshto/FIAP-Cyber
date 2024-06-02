@@ -14,7 +14,7 @@
 > apt install net-tools
 
 - Iniciar o servidor:
-service apache2 start
+> service apache2 start
 
 ### Notes CP01
 
