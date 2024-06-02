@@ -5,10 +5,10 @@
 ## Resumo de Comandos
 
 ### Updates/Installs
-apt install update
-apt install upgrade
-apt install apache2 apache2-utils -y
-apt install net-tools
+> apt install update
+> apt install upgrade
+> apt install apache2 apache2-utils -y
+> apt install net-tools
 
 - Iniciar o servidor:
 service apache2 start
@@ -28,7 +28,7 @@ touch bkp.txt cadastro.php
 - criar o index.html, com o editor de texto do Linux – nano, e ver o que acontece com o webservice:
 nano index.html
 
-#### RESOLVENDO PROBLEMAS DE SEGURANÇA:
+*RESOLVENDO PROBLEMAS DE SEGURANÇA*
 
 1. OCULTAR AS PASTAS PARA OS CLIENTES:
 nano /etc/apache2/apache2.conf
