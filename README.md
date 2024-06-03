@@ -210,26 +210,25 @@ Qual comando é usado para enviar uma requisição OPTIONS para um servidor?
 
 ### Comunicação entre 3 computadores:
 
-*Passo 1: Configuração no pc03 (192.168.1.30)*
+#### Passo 1: Configuração no pc03 (192.168.1.30)
 
 O pc03 será o destino final do arquivo. Vamos começar configurando-o para receber o arquivo na porta 1234:
 
-```sh
+``sh
 nc -lvp 1234 > arquivo_passado_pelo_kali_e_debian.txt
 
-
-*Passo 2: Configuração no pc02 (192.168.1.10)*
+#### Passo 2: Configuração no pc02 (192.168.1.10)
 
 O pc02 atuará como intermediário, recebendo dados do pc01 e retransmitindo para o pc03. Para isso, configuramos o pc02 para escutar na porta 6789 e redirecionar os dados para o pc03:
 
-```sh
+``sh
 nc -lvp 6789 | nc -v 192.168.1.30 1234
 
-*Passo 3: Configuração no pc01 (192.168.1.20)*
+#### Passo 3: Configuração no pc01 (192.168.1.20)
 
 O pc01 será o responsável por enviar o arquivo. Usaremos o cat para ler o arquivo e o nc para enviar os dados ao pc02::
 
-```sh
+``sh
 cat arquivo.txt | nc -v 192.168.1.10 6789
 
 
