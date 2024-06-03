@@ -154,5 +154,56 @@ Kali > VM01 > VM02
 > nc -v 192.168.1.10 1234 | nc -l -p 4321
 
 
+### Cp 03 
 
 
+O que acontece se o arquivo index.html estiver ausente no diretório padrão do webservice?
+>  O usuário pode navegar nas pastas e arquivos do servidor
+
+Quais são os componentes de um sistema web?
+> Clientes (browser), Servidor, Protocolo de comunicação, Página web
+
+Quais são os métodos HTTP principais?
+> GET, POST, PUT, DELETE, HEAD, OPTIONS
+
+Qual é o diretório padrão do servidor HTML no Apache?
+> b) /var/www/html
+
+Qual é o modelo de comunicação do HTTP?
+> Baseado em requisição e resposta
+
+Os princípios básicos da segurança da informação:
+> confidencialidade, integridade, disponibilidade
+
+Qual das seguintes opções é uma característica do modelo sem estado (stateless) do HTTP?
+> Cada requisição é considerada uma transação isolada
+
+Qual comando é usado para abrir uma conexão no cliente Windows usando Netcat?
+>  nc.exe -nv 192.168.1.30 4444
+
+Como verificar se o servidor Apache está ouvindo na porta 80?
+> netstat -nltp | grep 80, lsof -i :80 e netstat -nlp | grep :80
+
+Qual comando é usado para transferir um arquivo do servidor para o cliente usando Netcat?
+> cat senha.txt | nc -lvp 1234
+
+Qual comando verifica a integridade do arquivo transferido usando md5sum?
+>  md5sum senha.txt
+
+O que é necessário fazer para evitar que os usuários naveguem pelas pastas do webservice se o arquivo index.html estiver ausente?
+> Remover o INDEXES do arquivo de configuração do Apache
+
+Qual comando é usado para monitorar o log de acessos do Apache em tempo real?
+> tail -f /var/log/apache2/access.log
+
+Como se cria um servidor HTTP usando Python na porta 8080?
+> python3 -m http.server 8080
+
+Onde estão localizados os arquivos de log padrão do servidor Apache?
+>  dir /var/log/apache2
+
+O que deve ser feito para ocultar o banner do Apache para os clientes?
+> Remover o token do sistema operacional, Alterar a configuração do banner no arquivo /etc/apache2/conf-enabled/security.conf e Reiniciar o servidor Apache após a alteração
+
+Qual comando é usado para enviar uma requisição OPTIONS para um servidor?
+> printf "OPTIONS / HTTP/1.0\r\n\r\n" | nc 192.168.1.10 80
