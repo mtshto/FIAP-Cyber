@@ -217,6 +217,7 @@ O pc03 será o destino final do arquivo. Vamos começar configurando-o para rece
 ```sh
 nc -lvp 1234 > arquivo_passado_pelo_kali_e_debian.txt
 
+
 *Passo 2: Configuração no pc02 (192.168.1.10)*
 
 O pc02 atuará como intermediário, recebendo dados do pc01 e retransmitindo para o pc03. Para isso, configuramos o pc02 para escutar na porta 6789 e redirecionar os dados para o pc03:
