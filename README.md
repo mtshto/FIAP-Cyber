@@ -207,3 +207,12 @@ O que deve ser feito para ocultar o banner do Apache para os clientes?
 
 Qual comando é usado para enviar uma requisição OPTIONS para um servidor?
 > printf "OPTIONS / HTTP/1.0\r\n\r\n" | nc 192.168.1.10 80
+
+### Comunicação entre 3 computadores:
+
+*Passo 1: Configuração no pc03 (192.168.1.30)*
+
+O pc03 será o destino final do arquivo. Vamos começar configurando-o para receber o arquivo na porta 1234:
+
+```sh
+nc -lvp 1234 > arquivo_passado_pelo_kali_e_debian.txt
